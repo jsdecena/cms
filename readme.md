@@ -1,10 +1,10 @@
 ## Simple Laravel Blog
 
-### This is a simple blogging package that can be quickly installed by anyone.
+#### This is a simple blogging package that can be quickly installed by anyone.
 
-## Installation
+### Installation
 
-- Step1: Add this to your root `composer.json`  OR Run `composer require jsd/blog dev-master`
+- Step1: Add this to your root `composer.json`
 
 ```json
 
@@ -28,15 +28,15 @@
 
 - Step4: Rename `.env.example` to `.env` and set your database credentials
 
-- Step5: Run this in your terminal `php artisan key:generate && composer dump-autoload`
+- Step5: Run this in your terminal `php artisan key:generate`
 
 - Step6: Uncomment the `UsersTableSeeder::class` call in `/database/seeds/DatabaseSeeder.php`
 
-- Step7: Run this in your terminal `php artisan migrate --seed && php artisan serve`
+- Step7: Run this in your terminal `composer dump-autoload && php artisan migrate --seed && php artisan serve`
 
-- Step8: Go to [localhost:8000/blog](localhost:8000/blog)
+- Step8: Go to [http://localhost:8000/blog](http://localhost:8000/blog) OR
 
-- Step9: Go to [localhost:8000/admin](localhost:8000/admin) for backend login
+- Step9: Go to [http://localhost:8000/admin](http://localhost:8000/admin) for backend login
 
 - Step10: Use this credentials to login: email: `john@doe.com` | password: `Testing123`
 
