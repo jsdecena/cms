@@ -1,0 +1,16 @@
+{
+    "name": "jsd/blog",
+    "description": "Laravel Blog",
+	"autoload": {
+	        "psr-4": {
+	            "Jsd\\Blog\\": "src/"
+	        }
+	    },    
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeff Simons Decena",
+            "email": "jeff.decena@yahoo.com"
+        }
+    ]
+}
