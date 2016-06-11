@@ -32,12 +32,21 @@
 
 - Step6: Uncomment the `UsersTableSeeder::class` call in `/database/seeds/DatabaseSeeder.php`
 
-- Step7: Run this in your terminal `composer dump-autoload && php artisan migrate --seed && php artisan serve`
+- Step7: Add these lines in the `/database/seeds/DatabaseSeeder.php`
 
-- Step8: Go to [http://localhost:8000/blog](http://localhost:8000/blog) OR
+```json
 
-- Step9: Go to [http://localhost:8000/admin](http://localhost:8000/admin) for backend login
+    $this->call(PageTableSeeder::class);
+    $this->call(PostTableSeeder::class);
 
-- Step10: Use this credentials to login: email: `john@doe.com` | password: `Testing123`
+```
+
+- Step8: Run this in your terminal `composer dump-autoload && php artisan migrate --seed && php artisan serve`
+
+- Step9: Go to [http://localhost:8000/blog](http://localhost:8000/blog) OR
+
+- Step10: Go to [http://localhost:8000/admin](http://localhost:8000/admin) for backend login
+
+- Step11: Use this credentials to login: email: `john@doe.com` | password: `Testing123`
 
 - Enjoy!
