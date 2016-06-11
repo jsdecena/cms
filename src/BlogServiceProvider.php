@@ -16,7 +16,7 @@ class BlogServiceProvider extends ServiceProvider
     	$this->loadViewsFrom(__DIR__.'/views', 'blog');
 
 	    $this->publishes([
-	        __DIR__.'/views' 					=> resource_path('views'),
+	        __DIR__.'/views' 					=> resource_path('views/vendor/blog'),
 	        __DIR__.'/database/migrations' 		=> database_path('migrations'),
 	        __DIR__.'/database/seeds' 			=> database_path('seeds')
 	    ]);
