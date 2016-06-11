@@ -1,6 +1,6 @@
 <?php 
 
-namespace Jsd\Blog\Http\Controllers\Admin;
+namespace Jsdecena\Blog\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
  

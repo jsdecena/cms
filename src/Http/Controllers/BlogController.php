@@ -1,9 +1,9 @@
 <?php 
 
-namespace Jsd\Blog\Http\Controllers;
+namespace Jsdecena\Blog\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Jsd\Blog\Models\Post;
+use Jsdecena\Blog\Models\Post;
  
 class BlogController extends Controller
 {

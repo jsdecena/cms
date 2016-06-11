@@ -1,9 +1,9 @@
 {
-    "name": "jsd/blog",
+    "name": "jsdecena/blog",
     "description": "Laravel Blog",
 	"autoload": {
 	        "psr-4": {
-	            "Jsd\\Blog\\": "src/"
+	            "Jsdecena\\Blog\\": "src/"
 	        }
 	    },    
     "license": "MIT",

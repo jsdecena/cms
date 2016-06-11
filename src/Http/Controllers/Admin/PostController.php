@@ -1,11 +1,11 @@
 <?php 
 
-namespace Jsd\Blog\Http\Controllers\Admin;
+namespace Jsdecena\Blog\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
-use Jsd\Blog\Models\Post;
+use Jsdecena\Blog\Models\Post;
 use Validation;
 use Auth;
  

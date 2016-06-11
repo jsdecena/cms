@@ -9,7 +9,7 @@
 ```json
 
 	"require": {
-	    "jsd/blog": "1.0.*"
+	    "jsdecena/blog": "1.1.*"
 	}
 
 ```
@@ -19,7 +19,7 @@
 ```json
 
 	'providers' => [
-	    Jsd\Blog\BlogServiceProvider::class,
+	    Jsdecena\Blog\BlogServiceProvider::class,
 	]
 
 ```

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Jsd\Blog\Models\Page;
+use Jsdecena\Blog\Models\Page;
 
 class PageTableSeeder extends Seeder
 {

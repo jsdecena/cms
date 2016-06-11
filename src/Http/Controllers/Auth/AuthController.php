@@ -1,6 +1,6 @@
 <?php 
 
-namespace Jsd\Blog\Http\Controllers\Auth;
+namespace Jsdecena\Blog\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;

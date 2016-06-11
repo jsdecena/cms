@@ -1,6 +1,6 @@
 <?php
 
-namespace Jsd\Blog\Models;
+namespace Jsdecena\Blog\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
