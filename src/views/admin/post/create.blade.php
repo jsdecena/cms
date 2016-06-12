@@ -6,8 +6,9 @@
 		<div class="box-header with-border">
 		  <h3 class="box-title">Add a post</h3>
 		</div><!-- /.box-header -->
-		<div class="box-body">
-		    <form action="{{route('admin.post.store')}}" role="form" class="form" method="post">
+		<form action="{{route('admin.post.store')}}" role="form" class="form" method="post">
+		<div class="box-body row">
+			<div class="col-md-8">
 		    	<input type="hidden" name="_token" value="{{csrf_token()}}">
 		        <!-- text input -->
 		        <div class="form-group">
@@ -27,7 +28,19 @@
 		        </div>
 		        <a href="{{route('admin.post.index')}}" class="btn btn-default">Back</a>
 		        <button type="submit" class="btn btn-sml btn-primary">Submit</button>
-		    </form>
+			</div>
+			<div class="col-md-4">
+				@if(!$categories->isEmpty())
+					<div class="form-group">
+						@foreach($categories as $category)
+							<label class="checkbox">
+								<input type="checkbox" name="category[]" value="{{$category->id}}"> {{$category->name}}
+							</label>
+						@endforeach
+					</div>
+				@endif
+			</div>
 		</div><!-- /.box-body -->
+		</form>
 	</div><!-- /.box -->
 @endsection

@@ -4,14 +4,14 @@ namespace Jsdecena\Blog\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Category extends Model
 {
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'title', 'slug', 'content', 'status'];
+    protected $fillable = ['name', 'slug', 'description', 'status'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -20,8 +20,8 @@ class Post extends Model
      */
     protected $hidden = [];
 
-    public function categories()
+    public function posts()
     {
-        return $this->belongsToMany('Jsdecena\Blog\Models\Category');
-    }    
+        return $this->belongsToMany('Jsdecena\Blog\Models\Post');
+    }
 }

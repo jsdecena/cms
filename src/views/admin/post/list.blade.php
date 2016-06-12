@@ -11,8 +11,9 @@
                 <table class="table">
                     <tr>
                       <th class="col-md-1">#</th>
-                      <th class="col-md-3">Name</th>
-                      <th class="col-md-3">Content</th>
+                      <th class="col-md-2">Name</th>
+                      <th class="col-md-2">Content</th>
+                      <th class="col-md-2">Categories</th>
                       <th class="col-md-2">Status</th>
                       <th class="col-md-3">Actions</th>
                     </tr>
@@ -20,7 +21,17 @@
                         <tr>
                           <td>{{$post->id}}</td>
                           <td><a href="{{route('admin.post.edit', $post->id)}}">{{$post->title}}</a></td>
-                          <td>{{nl2br(str_limit($post->content, 100))}}</td>
+                          <td>{!!nl2br(str_limit($post->content, 100))!!}</td>
+                          <td>
+                          	<?php $categories = Jsdecena\Blog\Models\Post::find($post->id)->categories ?>
+                          	@if(!$categories->isEmpty())
+                          		@foreach($categories as $category)
+                          			<span class="label label-warning">{{$category->name}}</span>
+                          		@endforeach
+                          	@else
+                          		-
+                          	@endif
+                          </td>
                           <td>
                           	@if($post->status == 1)
                           		<button class="btn btn-success" type="button"><i class="fa fa-check"></i></button>

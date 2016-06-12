@@ -25,8 +25,17 @@
 	    <i class="fa fa-file-text"></i> <span>Posts</span> <i class="fa fa-angle-left pull-right"></i>
 	  </a>
 	  <ul class="treeview-menu">
-	    <li><a href="{{route('admin.post.index')}}"><i class="fa fa-circle-o text-success"></i> List pages</a></li>
+	    <li><a href="{{route('admin.post.index')}}"><i class="fa fa-circle-o text-success"></i> List posts</a></li>
 	    <li><a href="{{route('admin.post.create')}}"><i class="fa fa-plus text-red"></i> Add a post</a></li>
 	  </ul>
-	</li>    
+	</li>
+	<li class="treeview @if(request()->segment(2) == 'category') active @endif">
+	  <a href="#">
+	    <i class="fa fa-star"></i> <span>Categories</span> <i class="fa fa-angle-left pull-right"></i>
+	  </a>
+	  <ul class="treeview-menu">
+	    <li><a href="{{route('admin.category.index')}}"><i class="fa fa-circle-o text-success"></i> List categories</a></li>
+	    <li><a href="{{route('admin.category.create')}}"><i class="fa fa-plus text-red"></i> Add a category</a></li>
+	  </ul>
+	</li>	
 </ul>

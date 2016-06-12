@@ -4,7 +4,7 @@
     @include('blog::messages')
 	<div class="box">
 		<div class="box-header with-border">
-		  <h3 class="box-title">Add a page</h3>
+		  <h3 class="box-title">Edit page</h3>
 		</div><!-- /.box-header -->
 		<div class="box-body">
 		    <form action="{{route('admin.page.update', $page->id)}}" role="form" class="form" method="post">

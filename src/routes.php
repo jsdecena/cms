@@ -11,6 +11,7 @@ Route::group(['middleware' => ['web'] ], function () {
 	    Route::resource('user', 	'Jsdecena\Blog\Http\Controllers\Admin\UserController');
 	    Route::resource('post', 	'Jsdecena\Blog\Http\Controllers\Admin\PostController');
 	    Route::resource('page', 	'Jsdecena\Blog\Http\Controllers\Admin\PageController');
+	    Route::resource('category', 'Jsdecena\Blog\Http\Controllers\Admin\CategoryController');
 	});		
 });
 

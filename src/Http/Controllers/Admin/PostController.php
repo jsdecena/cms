@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 use Jsdecena\Blog\Models\Post;
-use Validation;
+use Jsdecena\Blog\Models\Category;
 use Auth;
  
 class PostController extends Controller
@@ -23,7 +23,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('blog::admin.post.create');
+        return view('blog::admin.post.create', ['categories' => Category::where('status', 1)->get()]);
     }
 
     /**
@@ -48,7 +48,11 @@ class PostController extends Controller
         	'status' 		=> $request->input('status')
         ];
 
-        Post::create($data);
+        $post = Post::create($data);
+
+        if ($request->has('category')) {
+			$post->categories()->sync($request->input('category'));
+        }        
 
         return redirect()->route('admin.post.index')->with('success', 'Successfully created!');
     }
@@ -61,7 +65,19 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        return view('blog::admin.post.edit', ['post' => Post::find($id)]);
+    	$post 		= Post::find($id);
+    	$postCats 	= $post->categories;
+
+    	$ids = [];
+    	foreach ($postCats as $cat) {
+    		$ids[] = $cat->id;
+    	}
+
+        return view('blog::admin.post.edit', [
+        											'post' 			=> $post,
+        											'ids'			=> $ids,
+        											'categories' 	=> Category::where('status', 1)->get()
+        										]);
     }
 
     /**
@@ -87,7 +103,14 @@ class PostController extends Controller
         	'status' 		=> $request->input('status')
         ];
 
-        Post::find($id)->update($data);
+        $post = Post::find($id);
+        $post->update($data);
+
+        if ($request->has('category')) {
+			$post->categories()->sync($request->input('category'));
+        }else{
+        	$post->categories()->detach();
+        }        
 
         return redirect()->route('admin.post.index')->with('success', 'Successfully updated!');
     }
