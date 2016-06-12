@@ -9,7 +9,7 @@
 ```json
 
 	"require": {
-	    "jsdecena/blog": "1.1.*"
+	    "jsdecena/blog": "1.2.*"
 	}
 
 ```
