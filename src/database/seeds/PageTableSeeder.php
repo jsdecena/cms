@@ -12,7 +12,7 @@ class PageTableSeeder extends Seeder
      */
     public function run()
     {
-        App\Page::create([
+        Page::create([
             'title'         => 'About us',
             'slug'         	=> 'about-us',
             'content'       => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?',
