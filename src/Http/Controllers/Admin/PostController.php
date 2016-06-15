@@ -96,7 +96,6 @@ class PostController extends Controller
         $user = Auth::user();
 
         $data = [
-        	'user_id' 		=> $user->id,
         	'title' 		=> $request->input('title'),
         	'slug'  		=> str_slug($request->input('title')),
         	'content' 		=> $request->input('content'),
