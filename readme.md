@@ -1,4 +1,4 @@
-## Simple Laravel Blog
+## Simple Laravel CMS
 
 ##### This CMS is a basic bootstrap application to make your web development up and running almost instantly. It includes basic User Authentication, User, Page, Post and Category CRUD. 
 
