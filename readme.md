@@ -52,3 +52,6 @@
 - Step11: Use this credentials to login: email: `john@doe.com` | password: `Testing123`
 
 - Enjoy!
+
+
+##### Check out the [wiki](https://github.com/jsdecena/cms/wiki) for the screenshots of the app!
