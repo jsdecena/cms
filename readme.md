@@ -1,6 +1,8 @@
 ## Simple Laravel Blog
 
-#### This is a simple blogging package that can be quickly installed by anyone.
+##### This CMS is a basic bootstrap application to make your web development up and running almost instantly. It includes basic User Authentication, User, Page, Post and Category CRUD. 
+
+##### Thanks to [ADMIN LTE](https://almsaeedstudio.com/preview) for the awesome dashboard look!
 
 ### Installation
 
