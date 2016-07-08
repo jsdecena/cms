@@ -19,7 +19,7 @@
 ```json
 
 	'providers' => [
-	    Jsdecena\Blog\CmsServiceProvider::class,
+	    Jsdecena\Cms\CmsServiceProvider::class,
 	]
 
 ```
