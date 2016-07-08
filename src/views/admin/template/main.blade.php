@@ -185,7 +185,7 @@
             </div>
           </form>
           <!-- /.search form -->
-		@include('blog::admin.template.sidebar-mini')
+		@include('cms::admin.template.sidebar-mini')
         </section>
         <!-- /.sidebar -->
       </aside>
@@ -206,7 +206,7 @@
 
         <!-- Main content -->
         <section class="content">
-			@yield('blog::content')
+			@yield('cms::content')
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
 

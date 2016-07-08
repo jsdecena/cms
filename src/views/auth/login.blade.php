@@ -15,7 +15,7 @@
 			<a href="{{url('admin')}}"><b>JSD</b>Blog</a>
 		</div><!-- /.login-logo -->
 		<div class="login-box-body">
-			@include('blog::messages')
+			@include('cms::messages')
 			<p class="login-box-msg">Sign in to start your session</p>
 			<form action="{{route('login')}}" method="post">
 				<input type="hidden" name="_token" value="{{csrf_token()}}" />

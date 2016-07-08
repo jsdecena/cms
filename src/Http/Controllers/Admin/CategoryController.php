@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('blog::admin.category.list', ['categories' => Category::paginate(10) ]);
+        return view('cms::admin.category.list', ['categories' => Category::paginate(10) ]);
     }
 
     /**
@@ -26,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('blog::admin.category.create');
+        return view('cms::admin.category.create');
     }
 
     /**
@@ -59,7 +59,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        return view('blog::admin.category.edit', ['category' => Category::find($id) ]);
+        return view('cms::admin.category.edit', ['category' => Category::find($id) ]);
     }
 
     /**

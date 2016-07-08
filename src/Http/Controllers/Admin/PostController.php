@@ -13,7 +13,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        return view('blog::admin.post.list', ['posts' => Post::paginate(10) ]);
+        return view('cms::admin.post.list', ['posts' => Post::paginate(10) ]);
     }
 
     /**
@@ -23,7 +23,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('blog::admin.post.create', ['categories' => Category::where('status', 1)->get()]);
+        return view('cms::admin.post.create', ['categories' => Category::where('status', 1)->get()]);
     }
 
     /**
@@ -73,7 +73,7 @@ class PostController extends Controller
     		$ids[] = $cat->id;
     	}
 
-        return view('blog::admin.post.edit', [
+        return view('cms::admin.post.edit', [
         											'post' 			=> $post,
         											'ids'			=> $ids,
         											'categories' 	=> Category::where('status', 1)->get()

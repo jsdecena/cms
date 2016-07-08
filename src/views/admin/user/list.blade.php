@@ -1,7 +1,7 @@
-@extends('blog::admin.template.main')
-@section('blog::content')
+@extends('cms::admin.template.main')
+@section('cms::content')
 	<!-- Default box -->
-    @include('blog::messages')
+    @include('cms::messages')
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Blog page</h3>
@@ -35,6 +35,6 @@
                 <div class="col-md-12"><p class="alert alert-warning">No page to show</p></div>
             @endif
         </div><!-- /.box-body -->
-        @include('blog::admin.template.pagination', ['pages' => $users])
+        @include('cms::admin.template.pagination', ['pages' => $users])
     </div><!-- /.box -->
 @endsection

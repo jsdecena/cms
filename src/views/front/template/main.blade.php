@@ -74,12 +74,12 @@
 
             <!-- Blog Post Content Column -->
             <div class="col-lg-8">
-            	@yield('blog::content')
+            	@yield('cms::content')
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4">
-				@include('blog::front.template.sidebar')
+				@include('cms::front.template.sidebar')
             </div>
 
         </div>

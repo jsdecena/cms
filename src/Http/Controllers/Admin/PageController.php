@@ -13,7 +13,7 @@ class PageController extends Controller
 {
     public function index()
     {
-        return view('blog::admin.page.list', ['pages' => Page::paginate(10) ]);
+        return view('cms::admin.page.list', ['pages' => Page::paginate(10) ]);
     }
 
     /**
@@ -23,7 +23,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        return view('blog::admin.page.create');
+        return view('cms::admin.page.create');
     }
 
     /**
@@ -61,7 +61,7 @@ class PageController extends Controller
      */
     public function edit($id)
     {
-        return view('blog::admin.page.edit', ['page' => Page::find($id)]);
+        return view('cms::admin.page.edit', ['page' => Page::find($id)]);
     }
 
     /**

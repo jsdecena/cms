@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('blog::admin.user.list', ['users' => User::paginate(10) ]);
+        return view('cms::admin.user.list', ['users' => User::paginate(10) ]);
     }
 
     /**
@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('blog::admin.user.create');
+        return view('cms::admin.user.create');
     }
 
     /**
@@ -59,7 +59,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return view('blog::admin.user.edit', ['user' => User::find($id)]);
+        return view('cms::admin.user.edit', ['user' => User::find($id)]);
     }
 
     /**

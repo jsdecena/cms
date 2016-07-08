@@ -1,5 +1,5 @@
-@extends('blog::admin.template.main')
-@section('blog::content')
+@extends('cms::admin.template.main')
+@section('cms::content')
 	<!-- Default box -->
 	<div class="box">
 		<div class="box-header with-border">

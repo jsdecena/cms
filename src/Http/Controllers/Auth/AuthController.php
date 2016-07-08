@@ -79,6 +79,6 @@ class AuthController extends Controller
             return view($view);
         }
 
-        return view('blog::auth.login');
+        return view('cms::auth.login');
     }    
 }

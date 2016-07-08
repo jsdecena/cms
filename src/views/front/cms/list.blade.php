@@ -1,5 +1,5 @@
-@extends('blog::front.template.main')
-@section('blog::content')
+@extends('cms::front.template.main')
+@section('cms::content')
 	@if(!$posts->isEmpty())
 		@foreach($posts as $post)
 			<section class="post">

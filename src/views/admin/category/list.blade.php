@@ -1,7 +1,7 @@
-@extends('blog::admin.template.main')
-@section('blog::content')
+@extends('cms::admin.template.main')
+@section('cms::content')
 	<!-- Default box -->
-    @include('blog::messages')
+    @include('cms::messages')
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Blog categories</h3>
@@ -39,7 +39,7 @@
                         </tr>
                     @endforeach
                 </table>
-                @include('blog::admin.template.pagination', ['pages' => $categories])
+                @include('cms::admin.template.pagination', ['pages' => $categories])
             @else
                 <div class="col-md-12"><p class="alert alert-warning">No category to show</p></div>
             @endif
