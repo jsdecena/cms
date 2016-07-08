@@ -1,9 +1,9 @@
 {
-    "name": "jsdecena/blog",
-    "description": "Laravel Blog",
+    "name": "jsdecena/cms",
+    "description": "A CMS powered by laravel",
 	"autoload": {
 	        "psr-4": {
-	            "Jsdecena\\Blog\\": "src/"
+	            "Jsdecena\\Cms\\": "src/"
 	        }
 	    },    
     "license": "MIT",

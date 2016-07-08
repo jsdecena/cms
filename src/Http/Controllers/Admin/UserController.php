@@ -1,6 +1,6 @@
 <?php 
 
-namespace Jsdecena\Blog\Http\Controllers\Admin;
+namespace Jsdecena\Cms\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 

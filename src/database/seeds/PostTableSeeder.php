@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Jsdecena\Blog\Models\Post;
+use Jsdecena\Cms\Models\Post;
 
 class PostTableSeeder extends Seeder
 {

@@ -9,7 +9,7 @@
 ```json
 
 	"require": {
-	    "jsdecena/blog": "1.2.*"
+	    "jsdecena/cms": "1.2.*"
 	}
 
 ```
@@ -19,7 +19,7 @@
 ```json
 
 	'providers' => [
-	    Jsdecena\Blog\BlogServiceProvider::class,
+	    Jsdecena\Blog\CmsServiceProvider::class,
 	]
 
 ```

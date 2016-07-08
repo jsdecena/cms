@@ -1,11 +1,11 @@
 <?php
 
-namespace Jsdecena\Blog\Http\Controllers\Admin;
+namespace Jsdecena\Cms\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
-use Jsdecena\Blog\Models\Category;
+use Jsdecena\Cms\Models\Category;
 
 class CategoryController extends Controller
 {

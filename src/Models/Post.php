@@ -1,6 +1,6 @@
 <?php
 
-namespace Jsdecena\Blog\Models;
+namespace Jsdecena\Cms\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,6 +22,6 @@ class Post extends Model
 
     public function categories()
     {
-        return $this->belongsToMany('Jsdecena\Blog\Models\Category');
+        return $this->belongsToMany('Jsdecena\Cms\Models\Category');
     }    
 }
