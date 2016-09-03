@@ -1,16 +1,28 @@
 {
-    "name": "jsdecena/cms",
-    "description": "A CMS powered by laravel",
-	"autoload": {
-	        "psr-4": {
-	            "Jsdecena\\Cms\\": "src/"
-	        }
-	    },    
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Jeff Simons Decena",
-            "email": "jeff.decena@yahoo.com"
-        }
-    ]
+  "name": "jsdecena/cms",
+  "description": "A CMS powered by laravel",
+  "autoload": {
+    "psr-4": {
+      "Jsdecena\\Cms\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/support": "~5.0",
+    "illuminate/http": "~5.0",
+    "namshi/jose": "5.0.*",
+    "nesbot/carbon": "~1.0"
+  },
+  "require-dev": {
+    "fzaninotto/faker": "~1.4",
+    "mockery/mockery": "0.9.*",
+    "phpunit/phpunit": "~4.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jeff Simons Decena",
+      "email": "jeff.decena@yahoo.com"
+    }
+  ]
 }

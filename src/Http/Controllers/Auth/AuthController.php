@@ -99,7 +99,9 @@ class AuthController extends Controller
         ];
 
         if (auth()->attempt($credentials)) {
-            return view('cms::admin.dashboard');
+            return redirect()->route('admin.home.index')->with([
+                'success' => 'You logged in of the application.'
+            ]);
         }
 
         return redirect()->back()->withInput()->with([
