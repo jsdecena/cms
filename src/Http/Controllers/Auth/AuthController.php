@@ -1,12 +1,17 @@
-<?php 
+<?php
 
 namespace Jsdecena\Cms\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use App\User;
-use Validator;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\View\View;
 
 class AuthController extends Controller
 {
@@ -21,9 +26,9 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use AuthenticatesUsers, ThrottlesLogins;
 
-    protected $redirectTo = 'admin';
+    protected $redirectTo = 'admin/home';
 
     /**
      * Create a new authentication controller instance.
@@ -68,7 +73,7 @@ class AuthController extends Controller
     /**
      * Show the application login form.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function showLoginForm()
     {
@@ -80,5 +85,34 @@ class AuthController extends Controller
         }
 
         return view('cms::auth.login');
-    }    
+    }
+
+    /**
+     * @param Request $request
+     * @return Factory|RedirectResponse|View
+     */
+    public function login(Request $request)
+    {
+        $credentials = [
+            'email' => $request->input('email'),
+            'password' => $request->input('password')
+        ];
+
+        if (auth()->attempt($credentials)) {
+            return view('cms::admin.dashboard');
+        }
+
+        return redirect()->back()->withInput()->with([
+            'error' => 'Invalid email or password.'
+        ]);
+    }
+
+    public function getLogout()
+    {
+        auth()->logout();
+
+        return redirect()->route('login')->with([
+            'success' => 'You have been logged out of the application.'
+        ]);
+    }
 }
