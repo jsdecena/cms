@@ -16,7 +16,7 @@ class CreateCategoryTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->integer('status')->default(0);
             $table->timestamps();
         });
