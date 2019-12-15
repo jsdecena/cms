@@ -5,6 +5,9 @@ namespace Jsdecena\Cms\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
+use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 use Jsdecena\Cms\Models\Category;
 
 class CategoryController extends Controller
@@ -12,17 +15,17 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
-        return view('cms::admin.category.list', ['categories' => Category::paginate(10) ]);
+        return view('cms::admin.category.list', ['categories' => Category::paginate(10)]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -32,20 +35,21 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
+     * @throws ValidationException
      */
     public function store(Request $request)
     {
         $this->validate($request, [
-        	'name'		=> 'required'
+            'name' => 'required'
         ]);
 
         Category::create([
-        					'name' 			=> $request->input('name'),
-        					'slug' 			=> str_slug($request->input('name')),
-        					'description' 	=> $request->input('description'),
-        					'status' 		=> $request->input('status')
+            'name' => $request->input('name'),
+            'slug' => Str::slug($request->input('name')),
+            'description' => $request->input('description'),
+            'status' => $request->input('status')
         ]);
 
         return redirect()->route('admin.category.index')->with('success', 'Successfully added!');
@@ -54,32 +58,33 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return Response
      */
     public function edit($id)
     {
-        return view('cms::admin.category.edit', ['category' => Category::find($id) ]);
+        return view('cms::admin.category.edit', ['category' => Category::find($id)]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param int $id
+     * @return Response
+     * @throws ValidationException
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-        	'name'		=> 'required'
+            'name' => 'required'
         ]);
 
         Category::find($id)->update([
-        					'name' 			=> $request->input('name'),
-        					'slug' 			=> str_slug($request->input('name')),
-        					'description' 	=> $request->input('description'),
-        					'status' 		=> $request->input('status')
+            'name' => $request->input('name'),
+            'slug' => str_slug($request->input('name')),
+            'description' => $request->input('description'),
+            'status' => $request->input('status')
         ]);
 
         return redirect()->route('admin.category.edit', $id)->with('success', 'Successfully updated!');
@@ -88,8 +93,8 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return Response
      */
     public function destroy($id)
     {
