@@ -20,13 +20,13 @@
                         <tr>
                           <td>{{$category->id}}</td>
                           <td><a href="{{route('admin.category.edit', $category->id)}}">{{$category->name}}</a></td>
-                          <td>{!!nl2br(str_limit($category->description, 100))!!}</td>
+                          <td>{!!nl2br(Str::limit($category->description, 100))!!}</td>
                           <td>
                           	@if($category->status == 1)
                           		<button class="btn btn-success" type="button"><i class="fa fa-check"></i></button>
                           	@else
                           		<button class="btn btn-danger" type="button"><i class="fa fa-times"></i></button>
-                          	@endif                          	
+                          	@endif
                           </td>
                           <td>
                                 <form action="{{route('admin.category.destroy', $category->id)}}" method="post">
