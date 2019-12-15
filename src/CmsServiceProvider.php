@@ -19,7 +19,7 @@ class CMsServiceProvider extends ServiceProvider
 	        __DIR__.'/views' 					=> resource_path('views/vendor/cms/'),
 	        __DIR__.'/database/migrations' 		=> database_path('migrations'),
 	        __DIR__.'/database/seeds' 			=> database_path('seeds')
-	    ]);
+	    ], 'jsdcms');
 
     }
 

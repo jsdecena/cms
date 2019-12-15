@@ -16,6 +16,13 @@
     "phpunit/phpunit": "~4.0"
   },
   "license": "MIT",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jsdecena\\Cms\\CMsServiceProvider"
+            ]
+        }
+    },
   "authors": [
     {
       "name": "Jeff Simons Decena",
