@@ -5,7 +5,6 @@ namespace Jsdecena\Cms\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
 use App\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -26,9 +25,9 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesUsers, ThrottlesLogins;
+    use AuthenticatesUsers;
 
-    protected $redirectTo = 'admin/home';
+    protected $redirectTo = 'admin';
 
     /**
      * Create a new authentication controller instance.
