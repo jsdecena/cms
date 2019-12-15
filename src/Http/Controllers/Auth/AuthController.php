@@ -91,7 +91,7 @@ class AuthController extends Controller
      * @param Request $request
      * @return Factory|RedirectResponse|View
      */
-    public function login(Request $request)
+    public function getLogin(Request $request)
     {
         $credentials = [
             'email' => $request->input('email'),
@@ -109,6 +109,9 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * @return RedirectResponse
+     */
     public function getLogout()
     {
         auth()->logout();
