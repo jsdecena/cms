@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Str;
 use Jsdecena\Cms\Models\Category;
 
 class CategoryController extends Controller
@@ -82,7 +83,7 @@ class CategoryController extends Controller
 
         Category::find($id)->update([
             'name' => $request->input('name'),
-            'slug' => str_slug($request->input('name')),
+            'slug' => Str::slug($request->input('name')),
             'description' => $request->input('description'),
             'status' => $request->input('status')
         ]);
