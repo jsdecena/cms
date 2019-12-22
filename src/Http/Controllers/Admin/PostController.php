@@ -4,10 +4,11 @@ namespace Jsdecena\Cms\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
+use Auth;
 use App\Http\Controllers\Controller;
 use Jsdecena\Cms\Models\Post;
 use Jsdecena\Cms\Models\Category;
-use Auth;
+use Illuminate\Support\Str;
  
 class PostController extends Controller
 {
@@ -43,7 +44,7 @@ class PostController extends Controller
         $data = [
         	'user_id' 		=> $user->id,
         	'title' 		=> $request->input('title'),
-        	'slug'  		=> str_slug($request->input('title')),
+        	'slug'  		=> Str::slug($request->input('title')),
         	'content' 		=> $request->input('content'),
         	'status' 		=> $request->input('status')
         ];
