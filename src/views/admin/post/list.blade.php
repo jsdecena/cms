@@ -21,7 +21,7 @@
                         <tr>
                           <td>{{$post->id}}</td>
                           <td><a href="{{route('admin.post.edit', $post->id)}}">{{$post->title}}</a></td>
-                          <td>{!!nl2br(str_limit($post->content, 100))!!}</td>
+                          <td>{!!nl2br(Str::limit($post->content, 100))!!}</td>
                           <td>
                           	<?php $categories = Jsdecena\Cms\Models\Post::find($post->id)->categories ?>
                           	@if(!$categories->isEmpty())
@@ -37,7 +37,7 @@
                           		<button class="btn btn-success" type="button"><i class="fa fa-check"></i></button>
                           	@else
                           		<button class="btn btn-danger" type="button"><i class="fa fa-times"></i></button>
-                          	@endif                          	
+                          	@endif
                           </td>
                           <td>
                                 <form action="{{route('admin.post.destroy', $post->id)}}" method="post">

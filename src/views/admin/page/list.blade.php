@@ -20,13 +20,13 @@
                         <tr>
                           <td>{{$page->id}}</td>
                           <td><a href="{{route('admin.page.edit', $page->id)}}">{{$page->title}}</a></td>
-                          <td>{!!nl2br(str_limit($page->content, 100))!!}</td>
+                          <td>{!!nl2br(Str::limit($page->content, 100))!!}</td>
                           <td>
                           	@if($page->status == 1)
                           		<button class="btn btn-success" type="button"><i class="fa fa-check"></i></button>
                           	@else
                           		<button class="btn btn-danger" type="button"><i class="fa fa-times"></i></button>
-                          	@endif                          	
+                          	@endif
                           </td>
                           <td>
                                 <form action="{{route('admin.page.destroy', $page->id)}}" method="post">
