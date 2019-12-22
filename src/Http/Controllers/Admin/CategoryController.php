@@ -18,9 +18,9 @@ class CategoryController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('cms::admin.category.list', ['categories' => Category::paginate(10)]);
+        return view('cms::admin.category.list', ['categories' => Category::paginate($request->input('per_page', 25))]);
     }
 
     /**

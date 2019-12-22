@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Jsdecena\Cms\Http\Controllers\Admin;
 
@@ -9,12 +9,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Jsdecena\Cms\Models\Page;
 use Validation;
- 
+
 class PageController extends Controller
 {
     public function index()
     {
-        return view('cms::admin.page.list', ['pages' => Page::paginate(10) ]);
+        return view('cms::admin.page.list', ['pages' => Page::paginate(10)]);
     }
 
     /**
@@ -30,23 +30,23 @@ class PageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $this->validate($request, [
-        	'title'		=> 'required'
+            'title' => 'required'
         ]);
 
         $user = Auth::user();
 
         $data = [
-        	'user_id' 		=> $user->id,
-        	'title' 		=> $request->input('title'),
-        	'slug'  		=> Str::slug($request->input('title')),
-        	'content' 		=> $request->input('content'),
-        	'status' 		=> $request->input('status')
+            'user_id' => $user->id,
+            'title' => $request->input('title'),
+            'slug' => Str::slug($request->input('title')),
+            'content' => $request->input('content'),
+            'status' => $request->input('status')
         ];
 
         Page::create($data);
@@ -57,7 +57,7 @@ class PageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -68,23 +68,23 @@ class PageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-        	'title'		=> 'required'
+            'title' => 'required'
         ]);
 
         $user = Auth::user();
 
         $data = [
-        	'title' 		=> $request->input('title'),
-        	'slug'  		=> Str::slug($request->input('title')),
-        	'content' 		=> $request->input('content'),
-        	'status' 		=> $request->input('status')
+            'title' => $request->input('title'),
+            'slug' => Str::slug($request->input('title')),
+            'content' => $request->input('content'),
+            'status' => $request->input('status')
         ];
 
         Page::find($id)->update($data);
@@ -95,7 +95,7 @@ class PageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

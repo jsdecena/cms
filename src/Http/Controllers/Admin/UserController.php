@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Jsdecena\Cms\Http\Controllers\Admin;
 
@@ -8,12 +8,12 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Validation;
 use Hash;
- 
+
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('cms::admin.user.list', ['users' => User::paginate(10) ]);
+        return view('cms::admin.user.list', ['users' => User::paginate($request->input('per_page', 25))]);
     }
 
     /**
@@ -29,21 +29,21 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $this->validate($request, [
-        	'name'		=> 'required',
-        	'email'		=> 'required|email|unique:users',
-        	'password'	=> 'required'
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required'
         ]);
 
         $data = [
-        	'name' 		=> $request->input('name'),
-        	'email' 	=> $request->input('email'),
-        	'password'	=> Hash::make($request->input('password'))
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input('password'))
         ];
 
         User::create($data);
@@ -54,7 +54,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -65,24 +65,24 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-        	'name'		=> 'required',
-        	'email'		=> 'required|email',
+            'name' => 'required',
+            'email' => 'required|email',
         ]);
 
         $data = [
-        	'name' 		=> $request->input('name'),
-        	'email' 	=> $request->input('email')
+            'name' => $request->input('name'),
+            'email' => $request->input('email')
         ];
 
         if ($request->has('password')) {
-        	$data['password'] = Hash::make($request->input('password'));
+            $data['password'] = Hash::make($request->input('password'));
         }
 
         User::find($id)->update($data);
@@ -93,7 +93,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

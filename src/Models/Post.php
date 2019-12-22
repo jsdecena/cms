@@ -11,7 +11,15 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'title', 'slug', 'content', 'status'];
+    protected $fillable = [
+        'user_id',
+        'title',
+        'slug',
+        'content',
+        'status',
+        'cover_image',
+        'link'
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -23,5 +31,5 @@ class Post extends Model
     public function categories()
     {
         return $this->belongsToMany('Jsdecena\Cms\Models\Category');
-    }    
+    }
 }
