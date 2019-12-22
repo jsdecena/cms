@@ -98,7 +98,7 @@ class PostController extends Controller
 
         $data = [
         	'title' 		=> $request->input('title'),
-        	'slug'  		=> str_slug($request->input('title')),
+        	'slug'  		=> Str::slug($request->input('title')),
         	'content' 		=> $request->input('content'),
         	'status' 		=> $request->input('status')
         ];
