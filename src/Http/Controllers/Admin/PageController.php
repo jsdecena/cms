@@ -4,10 +4,11 @@ namespace Jsdecena\Cms\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
+use Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 use Jsdecena\Cms\Models\Page;
 use Validation;
-use Auth;
  
 class PageController extends Controller
 {
@@ -43,7 +44,7 @@ class PageController extends Controller
         $data = [
         	'user_id' 		=> $user->id,
         	'title' 		=> $request->input('title'),
-        	'slug'  		=> str_slug($request->input('title')),
+        	'slug'  		=> Str::slug($request->input('title')),
         	'content' 		=> $request->input('content'),
         	'status' 		=> $request->input('status')
         ];
@@ -81,7 +82,7 @@ class PageController extends Controller
 
         $data = [
         	'title' 		=> $request->input('title'),
-        	'slug'  		=> str_slug($request->input('title')),
+        	'slug'  		=> Str::slug($request->input('title')),
         	'content' 		=> $request->input('content'),
         	'status' 		=> $request->input('status')
         ];
